@@ -1,6 +1,5 @@
 import 'package:daily_quotes/dto/QuotesDTO.dart';
-import 'package:daily_quotes/screens/HomePage.dart';
-
+import 'package:daily_quotes/screens/CategoryPage.dart';
 import 'package:flutter/material.dart';
 
 class QuotesPage extends StatefulWidget {
@@ -46,7 +45,7 @@ class QuotePageState extends State<QuotesPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomePage()));
+                                    builder: (context) => CategoryPage()));
                           },
                         ),
                       );

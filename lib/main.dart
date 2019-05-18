@@ -1,4 +1,4 @@
-import 'package:daily_quotes/screens/HomePage.dart';
+import 'package:daily_quotes/screens/CategoryPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      home: HomePage(),
+      home: CategoryPage(),
     );
   }
 }

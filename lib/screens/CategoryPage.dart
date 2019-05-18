@@ -2,13 +2,13 @@ import 'package:daily_quotes/screens/QuotesPage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+class CategoryPage extends StatefulWidget {
+  CategoryPage({Key key}) : super(key: key);
   @override
-  HomePageState createState() => HomePageState();
+  CategoryPageState createState() => CategoryPageState();
 }
 
-class HomePageState extends State<HomePage> {
+class CategoryPageState extends State<CategoryPage> {
   List<String> quotesCategory = [
     "Inspirational Quotes",
     "Motivational Quotes",
