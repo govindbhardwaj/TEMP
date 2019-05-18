@@ -1,15 +1,14 @@
+import 'package:daily_quotes/screens/QuotesPage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../dto/AllQuotes.dart';
-import '../state/QuoteList.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
   @override
-  MyListState createState() => MyListState();
+  HomePageState createState() => HomePageState();
 }
 
-class MyListState extends State<MyHomePage> {
+class HomePageState extends State<HomePage> {
   List<String> quotesCategory = [
     "Inspirational Quotes",
     "Motivational Quotes",
@@ -23,43 +22,32 @@ class MyListState extends State<MyHomePage> {
     "Positive Encouraging Quotes"
   ];
 
-  Widget futureWidget() {
-    return new FutureBuilder<AllQuotes>(
-      future: loadQuotes(),
-      builder: (context, snapshot) {
-        return new Container(
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Daily Quote'),
+        ),
+        body: new Container(
             padding: new EdgeInsets.all(20.0),
             child: new ListView.builder(
               itemBuilder: (context, position) {
                 return Card(
                   child: ListTile(
-                    leading: FlutterLogo(),
+                    leading: new Icon(Icons.bookmark_border),
                     title: Text(quotesCategory[position]),
                     trailing: const Icon(Icons.format_quote),
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SecondPage()));
+                              builder: (context) =>
+                                  QuotesPage(quotesCategory[position])));
                     },
                   ),
                 );
               },
               itemCount: quotesCategory.length,
-            ));
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text('Daily Quote'),
-          ),
-          body: futureWidget()),
-      theme: ThemeData(primarySwatch: Colors.blue),
-    );
+            )));
   }
 }
