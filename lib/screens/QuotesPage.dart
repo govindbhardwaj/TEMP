@@ -18,7 +18,7 @@ class QuotePageState extends State<QuotesPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('Daily Quote'),
+          title: new Text(category),
         ),
         body: new FutureBuilder<QuotesDTO>(
           future: loadQuotes(),
@@ -61,7 +61,12 @@ class QuotePageState extends State<QuotesPage> {
             } else if (snapshot.hasError) {
               return new Text("${snapshot.error}");
             }
-            return new CircularProgressIndicator();
+            return Container(
+                    
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
           },
         ));
   }
