@@ -1,5 +1,5 @@
 import 'package:daily_quotes/dto/QuotesDTO.dart';
-import 'package:daily_quotes/screens/CategoryPage.dart';
+import 'package:daily_quotes/screens/CardPage.dart';
 import 'package:flutter/material.dart';
 
 class QuotesPage extends StatefulWidget {
@@ -28,24 +28,30 @@ class QuotePageState extends State<QuotesPage> {
                   padding: new EdgeInsets.all(10.0),
                   child: new ListView.builder(
                     itemBuilder: (context, position) {
+                      const textStyle = const TextStyle(color: Colors.pink);
                       return Card(
                         child: ListTile(
-                          leading: new Icon(Icons.chevron_left),
+                          leading: new Icon(
+                            Icons.chevron_left,
+                            color: Colors.pink.shade900,
+                          ),
                           title:
                               Text(snapshot.data.map[category][position].quote),
                           subtitle: Text(
                             snapshot.data.map[category][position].author + " -",
-                            style: const TextStyle(
-                              color: Colors.black54,
-                            ),
+                            style: textStyle,
                             textDirection: TextDirection.rtl,
                           ),
-                          trailing: const Icon(Icons.format_quote),
+                          trailing: new Icon(
+                            Icons.format_quote,
+                            color: Colors.pink.shade900,
+                          ),
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CategoryPage()));
+                                    builder: (context) => CardPage(snapshot
+                                        .data.map[category][position].quote)));
                           },
                         ),
                       );

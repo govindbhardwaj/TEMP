@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Daily Quotes',
+      
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        primarySwatch: Colors.pink,
       ),
       home: CategoryPage(),
     );
