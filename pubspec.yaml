@@ -32,8 +32,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.6.0"
+  flutter_launcher_icons: "^0.7.0"
 
+flutter_icons:
+  android: "laucher_icon"
+  image_path: "assets/screen.png"
+
+dependency_overrides:
+  image: 2.0.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -78,6 +84,3 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-flutter_icons:
-  android: "laucher_icon"
-  image_path: "assets/screen.png"
