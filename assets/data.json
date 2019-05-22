@@ -1,5 +1,69 @@
 {
   "Inspirational Quotes": [
+    {
+      "quote": "The pain you feel today will be the strength you feel tomorrow.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Never give up, stay focused, stay positive, stay strong.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "You’ve got to be willing to lose everything to gain yourself.",
+      "author": "Iyanla Vanzant"
+    },
+    {
+      "quote": "Your life does not get better by chance, it gets better by change.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Success in life comes when you simply refuse to give up, with goals so strong that obstacles, failure, and loss only act as motivation.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Do something today that your future self will thank you for.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Don’t downgrade your dream just to fit your reality. Upgrade your conviction to match your destiny.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "You don’t manifest dreams without taking chances. ",
+      "author": " Stephen Richards"
+    },
+    {
+      "quote": "Have faith in the universe and its capability to lead you to the path of abundance. ",
+      "author": " Stephen Richards"
+    },
+    {
+      "quote": "Set a goal that makes you want to jump out of bed in the morning.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "The harder you work for something, the greater you’ll feel when you achieve it.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "When you know what you want, and want it bad enough, you’ll find a way to get it.",
+      "author": "Jim Rohn"
+    },
+    {
+      "quote": "The greatest lesson of life is that you are responsible for your life. ",
+      "author": " Oprah Winfrey"
+    },
+    {
+      "quote": "You are never to old to set another goal or to dream a new dream.",
+      "author": "C.S. Lewis"
+    },
+    {
+      "quote": "When you accomplish the impossible then you can achieve anything. ",
+      "author": " Stephen Richards"
+    },
+    {
+      "quote": "Push yourself because no one else is going to do it for you.",
+      "author": "Unknown"
+    },
     { "quote": "You matter.", "author": "Unknown" },
     { "quote": "Be a voice not an echo.", "author": "Unknown" },
     {
@@ -839,7 +903,7 @@
       "author": " Robert F. Kennedy"
     }
   ],
-  "Inspirational Quotes About Life": [
+  "Life Quotes": [
     {
       "quote": "Life is short, and it is up to you to make it sweet.",
       "author": "Sarah Louise Delany"
@@ -1203,73 +1267,7 @@
     { "quote": "Move closer to your dreams and goals.", "author": "Unknown" },
     { "quote": "You can do it.", "author": "Unknown" }
   ],
-  "Inspirational Quotes For Encouragement": [
-    {
-      "quote": "The pain you feel today will be the strength you feel tomorrow.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "Never give up, stay focused, stay positive, stay strong.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "You’ve got to be willing to lose everything to gain yourself.",
-      "author": "Iyanla Vanzant"
-    },
-    {
-      "quote": "Your life does not get better by chance, it gets better by change.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "Success in life comes when you simply refuse to give up, with goals so strong that obstacles, failure, and loss only act as motivation.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "Do something today that your future self will thank you for.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "Don’t downgrade your dream just to fit your reality. Upgrade your conviction to match your destiny.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "You don’t manifest dreams without taking chances. ",
-      "author": " Stephen Richards"
-    },
-    {
-      "quote": "Have faith in the universe and its capability to lead you to the path of abundance. ",
-      "author": " Stephen Richards"
-    },
-    {
-      "quote": "Set a goal that makes you want to jump out of bed in the morning.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "The harder you work for something, the greater you’ll feel when you achieve it.",
-      "author": "Unknown"
-    },
-    {
-      "quote": "When you know what you want, and want it bad enough, you’ll find a way to get it.",
-      "author": "Jim Rohn"
-    },
-    {
-      "quote": "The greatest lesson of life is that you are responsible for your life. ",
-      "author": " Oprah Winfrey"
-    },
-    {
-      "quote": "You are never to old to set another goal or to dream a new dream.",
-      "author": "C.S. Lewis"
-    },
-    {
-      "quote": "When you accomplish the impossible then you can achieve anything. ",
-      "author": " Stephen Richards"
-    },
-    {
-      "quote": "Push yourself because no one else is going to do it for you.",
-      "author": "Unknown"
-    }
-  ],
-  "Short Encouraging Quotes": [
+  "Encouraging Quotes": [
     { "quote": "I don’t make excuses. I make results.", "author": "Unknown" },
     { "quote": "Never give up. Keep going.", "author": "Unknown" },
     {
@@ -1301,9 +1299,7 @@
     {
       "quote": "Believe and act as if it were impossible to fail.",
       "author": "Charles Kettering"
-    }
-  ],
-  "Positive Encouraging Quotes": [
+    },
     {
       "quote": "Don’t regret the past, just learn from it.",
       "author": "Ben Ipock"
