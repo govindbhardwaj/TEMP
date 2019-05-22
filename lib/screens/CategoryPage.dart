@@ -3,10 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:daily_quotes/screens/CardPage.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:daily_quotes/helpers/local_notification_helper.dart';
-import 'package:daily_quotes/helpers/second_page.dart';
 
 class CategoryPage extends StatefulWidget {
   CategoryPage({Key key}) : super(key: key);
@@ -44,7 +41,6 @@ class CategoryPageState extends State<CategoryPage> {
         onSelectNotification: onSelectNotification);
   }
 
-
   Future onSelectNotification(String payload) async {
     print("Payload from Category: " + payload);
     await Navigator.push(
@@ -52,6 +48,7 @@ class CategoryPageState extends State<CategoryPage> {
       MaterialPageRoute(builder: (context) => CardPage(payload)),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
