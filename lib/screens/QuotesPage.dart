@@ -62,11 +62,10 @@ class QuotePageState extends State<QuotesPage> {
               return new Text("${snapshot.error}");
             }
             return Container(
-                    
-                    child: Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  );
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
           },
         ));
   }
