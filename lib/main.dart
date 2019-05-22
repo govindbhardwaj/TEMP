@@ -1,5 +1,6 @@
 import 'dart:isolate';
 
+import 'package:daily_quotes/helpers/local_notification_widget.dart';
 import 'package:daily_quotes/screens/QuotesPage.dart';
 import 'package:daily_quotes/screens/CategoryPage.dart';
 import 'package:flutter/material.dart';
@@ -32,11 +33,10 @@ void printHello() async {
     body: quote,
     id: 40
   );
-
 }
 
 Future onSelectNotification(String payload) async {
-  print("Payload : " + payload);
+  print("Payload from main: " + payload);
   Navigator.of(_globalKey.currentContext).push(MaterialPageRoute(builder: (context) => QuotesPage(payload)));
   var push = Navigator.of(app.context2).push(MaterialPageRoute(builder: (context) => QuotesPage(payload)));
   print(push);

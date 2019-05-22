@@ -2,6 +2,12 @@ import 'package:daily_quotes/screens/QuotesPage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'package:daily_quotes/screens/CardPage.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:daily_quotes/helpers/local_notification_helper.dart';
+import 'package:daily_quotes/helpers/second_page.dart';
+
 class CategoryPage extends StatefulWidget {
   CategoryPage({Key key}) : super(key: key);
   @override
@@ -22,6 +28,30 @@ class CategoryPageState extends State<CategoryPage> {
     "Positive Encouraging Quotes"
   ];
 
+  final notifications = FlutterLocalNotificationsPlugin();
+
+  @override
+  void initState() {
+    super.initState();
+
+    final settingsAndroid = AndroidInitializationSettings('@mipmap/screen');
+    final settingsIOS = IOSInitializationSettings(
+        onDidReceiveLocalNotification: (id, title, body, payload) =>
+            onSelectNotification(payload));
+
+    notifications.initialize(
+        InitializationSettings(settingsAndroid, settingsIOS),
+        onSelectNotification: onSelectNotification);
+  }
+
+
+  Future onSelectNotification(String payload) async {
+    print("Payload from Category: " + payload);
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => CardPage(payload)),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

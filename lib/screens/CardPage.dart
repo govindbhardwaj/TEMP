@@ -32,31 +32,31 @@ class CardPageState extends State<CardPage> {
   }
 
   GlobalKey _globalKey = new GlobalKey();
-
-  final notifications = FlutterLocalNotificationsPlugin();
-
-  @override
-  void initState() {
-    super.initState();
-
-    final settingsAndroid = AndroidInitializationSettings('@mipmap/screen');
-    final settingsIOS = IOSInitializationSettings(
-        onDidReceiveLocalNotification: (id, title, body, payload) =>
-            onSelectNotification(payload));
-
-    notifications.initialize(
-        InitializationSettings(settingsAndroid, settingsIOS),
-        onSelectNotification: onSelectNotification);
-  }
-
-  Future onSelectNotification(String payload) async {
-    print("Payload : " + payload);
-    await Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => SecondPage(payload: payload)),
-    );
-
-  }
+//
+//  final notifications = FlutterLocalNotificationsPlugin();
+//
+//  @override
+//  void initState() {
+//    super.initState();
+//
+//    final settingsAndroid = AndroidInitializationSettings('@mipmap/screen');
+//    final settingsIOS = IOSInitializationSettings(
+//        onDidReceiveLocalNotification: (id, title, body, payload) =>
+//            onSelectNotification(payload));
+//
+//    notifications.initialize(
+//        InitializationSettings(settingsAndroid, settingsIOS),
+//        onSelectNotification: onSelectNotification);
+//  }
+//
+//  Future onSelectNotification(String payload) async {
+//    print("Payload : " + payload);
+//    await Navigator.push(
+//      context,
+//      MaterialPageRoute(builder: (context) => SecondPage(payload: payload)),
+//    );
+//
+//  }
 
   Future<void> _captureQuotePicAndShare() async {
     return new Future.delayed(const Duration(milliseconds: 0), () async {
