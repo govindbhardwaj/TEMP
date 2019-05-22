@@ -1,4 +1,4 @@
-package com.example.daily_quotes;
+package com.thriftstore.daily_quotes;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
