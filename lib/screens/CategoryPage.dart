@@ -17,12 +17,10 @@ class CategoryPageState extends State<CategoryPage> {
     "Motivational Quotes",
     "Positive Quotes",
     "Success Quotes",
-    "Inspirational Quotes About Life",
+    "Life Quotes",
     "Short Inspirational Quotes",
     "Words Of Encouragement",
-    "Inspirational Quotes For Encouragement",
-    "Short Encouraging Quotes",
-    "Positive Encouraging Quotes"
+    "Encouraging Quotes"
   ];
 
   final notifications = FlutterLocalNotificationsPlugin();
@@ -54,16 +52,26 @@ class CategoryPageState extends State<CategoryPage> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Daily Quote'),
+
         ),
         body: new Container(
+
             padding: new EdgeInsets.all(20.0),
             child: new ListView.builder(
               itemBuilder: (context, position) {
                 return Card(
+                  margin: new EdgeInsets.all(10),
+                  elevation: 5,
                   child: ListTile(
-                    leading: new Icon(Icons.bookmark_border),
+                    leading: new Icon(
+                      Icons.bookmark,
+                      color: Colors.pink.shade900,
+                    ),
                     title: Text(quotesCategory[position]),
-                    trailing: const Icon(Icons.format_quote),
+                    trailing: new Icon(
+                      Icons.format_quote,
+                      color: Colors.pink.shade900,
+                    ),
                     onTap: () {
                       Navigator.push(
                           context,

@@ -27,7 +27,6 @@ class CardPageState extends State<CardPage> {
 
   GlobalKey _globalKey = new GlobalKey();
 
-
   Future<void> _captureQuotePicAndShare() async {
     return new Future.delayed(const Duration(milliseconds: 0), () async {
       try {
@@ -44,41 +43,74 @@ class CardPageState extends State<CardPage> {
     });
   }
 
+  List<Color> backgroundColors = [Colors.black, Colors.white, Colors.purple, Colors.grey];
+  List<Color> fontColors = [Colors.pinkAccent, Colors.black, Colors.white, Colors.yellow, Colors.brown, Colors.deepPurple];
+
+  int backgroundColorIndex = 0;
+  int fontColorIndex = 0;
+
+  Color getBackgroundColor() {
+    if(backgroundColorIndex == backgroundColors.length || backgroundColorIndex > backgroundColors.length)
+      backgroundColorIndex = 0;
+    return backgroundColors.elementAt(backgroundColorIndex);
+  }
+
+  Color getFontColor() {
+    if(fontColorIndex == fontColors.length || fontColorIndex > fontColors.length)
+      fontColorIndex = 0;
+    return fontColors.elementAt(fontColorIndex);
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: RepaintBoundary(
-        key: _globalKey,
+    return new GestureDetector(
         child: new Scaffold(
-          body: new Container(
-              color: Colors.black,
-              padding: new EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Card(
-                      color: Colors.black,
-                      child: RichText(
+          body: new RepaintBoundary(
+            key: _globalKey,
+            child: new Scaffold(
+              body: new Container(
+                  color: getBackgroundColor(),
+                  padding: new EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      RichText(
                         text: TextSpan(
                             text: category,
                             style: TextStyle(
                                 fontSize: 40,
                                 fontFamily: "Stylish",
-                                color: Colors.pinkAccent)),
+                                color: getFontColor())),
                         textAlign: TextAlign.center,
-                      )),
-                ],
-              )),
+                      ),
+                    ],
+                  )),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton.extended(
+              tooltip: 'Increment',
+              icon: Icon(Icons.share),
+              onPressed: _captureQuotePicAndShare,
+              label: new Text("Share")),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
         ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-          tooltip: 'Increment',
-          icon: Icon(Icons.share),
-          onPressed: _captureQuotePicAndShare,
-          label: new Text("Share")),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        onTap: changeBackgroundColor,
+        onDoubleTap: changeFontColor,
     );
+  }
+
+  void changeBackgroundColor() {
+    backgroundColorIndex++;
+    setState(() {
+    });
+  }
+
+  void changeFontColor() {
+    fontColorIndex++;
+    setState(() {
+    });
   }
 }

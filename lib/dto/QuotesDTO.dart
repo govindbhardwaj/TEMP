@@ -18,12 +18,10 @@ class QuotesDTO {
       "Motivational Quotes",
       "Positive Quotes",
       "Success Quotes",
-      "Inspirational Quotes About Life",
+      "Life Quotes",
       "Short Inspirational Quotes",
       "Words Of Encouragement",
-      "Inspirational Quotes For Encouragement",
-      "Short Encouraging Quotes",
-      "Positive Encouraging Quotes"
+      "Encouraging Quotes"
     ];
 
     for (int i = 0; i < quotesCategory.length; i++) {
@@ -57,14 +55,18 @@ Future wait(int seconds) {
 
 class Quote {
   String quote;
-  String author = "Unknown";
+  String author;
 
-  Quote(quote, author) {
-    if(author == null || author == "") {
+  Quote(String quote, String author) {
+    if(author == null || author.isEmpty) {
       this.author = "Unknown";
+    }
+    else {
+      this.author = author;
     }
     this.quote = quote;
   }
+
 
   factory Quote.fromJson(Map<String, dynamic> quoteJson) {
     return Quote(quoteJson['quote'], quoteJson['author']);

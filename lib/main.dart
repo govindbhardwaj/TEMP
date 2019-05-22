@@ -40,8 +40,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Daily Quotes',
         theme: ThemeData(
-          primarySwatch: Colors.pink,
+          primarySwatch: Colors.pink
         ),
-        home: CategoryPage());
+        home: CategoryPage(),
+      );
   }
 }

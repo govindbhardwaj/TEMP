@@ -12,7 +12,12 @@ class QuotesPage extends StatefulWidget {
 
 class QuotePageState extends State<QuotesPage> {
   String category;
-  QuotePageState(this.category);
+  QuotePageState(category) {
+    this.category = category.replaceAll('.', ".\n").replaceAll(",", ",\n");
+    if (this.category.contains(",\n and")) {
+      this.category = this.category.replaceAll("and", "and\n");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +33,18 @@ class QuotePageState extends State<QuotesPage> {
                   padding: new EdgeInsets.all(10.0),
                   child: new ListView.builder(
                     itemBuilder: (context, position) {
-                      const textStyle = const TextStyle(color: Colors.pink);
+                      const textStyle = const TextStyle(color: Colors.pink, fontSize: 12);
+                      const textStyle2 = const TextStyle(fontSize: 14, fontFamily: "Rock Salt");
+
                       return Card(
+                        margin: new EdgeInsets.fromLTRB(10, 10, 10, 10),
+
+                        elevation: 5,
+
                         child: ListTile(
-                          leading: new Icon(
-                            Icons.chevron_left,
-                            color: Colors.pink.shade900,
-                          ),
                           title:
-                              Text(snapshot.data.map[category][position].quote),
+                              Text(snapshot.data.map[category][position].quote,
+                              style: textStyle2),
                           subtitle: Text(
                             snapshot.data.map[category][position].author + " -",
                             style: textStyle,
