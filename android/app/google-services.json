@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "774882051967",
+    "firebase_url": "https://daily-quotes-26849.firebaseio.com",
+    "project_id": "daily-quotes-26849",
+    "storage_bucket": "daily-quotes-26849.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774882051967:android:75a672aa386b6993",
+        "android_client_info": {
+          "package_name": "com.thriftstore.daily_quotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774882051967-lamlatc8e22obc4a5h0qfgv89uh83mb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRyjzQm8x_lrZ23iswxfiiQxoXq4hDk5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774882051967-lamlatc8e22obc4a5h0qfgv89uh83mb6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1790548623336527~7884681226"
+    }
+  ],
+  "configuration_version": "1"
+}

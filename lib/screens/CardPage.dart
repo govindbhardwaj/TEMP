@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 
 import 'package:esys_flutter_share/esys_flutter_share.dart';
 
@@ -84,6 +85,43 @@ class CardPageState extends State<CardPage> {
       resetIndexes();
     }
     return fontColors.elementAt(fontColorIndex);
+  }
+
+  static final MobileAdTargetingInfo targetInfo = new MobileAdTargetingInfo(
+    testDevices: <String>[],
+    keywords: <String>['quotes', 'inspiration', 'motivation'],
+    birthday: new DateTime.now(),
+    childDirected: true,
+  );
+
+  BannerAd _bannerAd;
+
+  BannerAd createBannerAd() {
+    return new BannerAd(
+        adUnitId: "ca-app-pub-1790548623336527/1825435685",
+        size: AdSize.smartBanner,
+        targetingInfo: targetInfo,
+        listener: (MobileAdEvent event) {
+          print("Banner event : $event");
+        });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _bannerAd = createBannerAd()
+      ..load()
+      ..show(
+        anchorOffset: 50.0,
+        anchorType: AnchorType.top,
+      );
+  }
+
+  @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
   }
 
   @override

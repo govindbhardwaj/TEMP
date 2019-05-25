@@ -1,6 +1,7 @@
 import 'package:daily_quotes/dto/QuotesDTO.dart';
 import 'package:daily_quotes/screens/CardPage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 
 class QuotesPage extends StatefulWidget {
   String category;
@@ -17,6 +18,50 @@ class QuotePageState extends State<QuotesPage> {
     if (this.category.contains(",\n and")) {
       this.category = this.category.replaceAll("and", "and\n");
     }
+  }
+
+  static final MobileAdTargetingInfo targetInfo = new MobileAdTargetingInfo(
+    testDevices: <String>[],
+    keywords: <String>['quotes', 'inspiration', 'motivation'],
+    birthday: new DateTime.now(),
+    childDirected: true,
+  );
+
+  BannerAd _bannerAd;
+  InterstitialAd _interstitialAd;
+
+  BannerAd createBannerAd() {
+    return new BannerAd(
+        adUnitId: "ca-app-pub-1790548623336527/3137505597",
+        size: AdSize.smartBanner,
+        targetingInfo: targetInfo,
+        listener: (MobileAdEvent event) {
+          print("Banner event : $event");
+        });
+  }
+
+  InterstitialAd createInterstitialAd() {
+    return new InterstitialAd(
+        adUnitId: "ca-app-pub-1790548623336527/9387843898",
+        targetingInfo: targetInfo,
+        listener: (MobileAdEvent event) {
+          print("Interstitial event : $event");
+        });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _bannerAd = createBannerAd()
+      ..load()
+      ..show();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd.dispose();
+    _interstitialAd.dispose();
+    super.dispose();
   }
 
   @override
@@ -38,13 +83,13 @@ class QuotePageState extends State<QuotesPage> {
 
                       return Card(
                         margin: new EdgeInsets.fromLTRB(10, 10, 10, 10),
-
+                        
                         elevation: 5,
 
                         child: ListTile(
-                          title:
-                              Text(snapshot.data.map[category][position].quote,
-                              style: textStyle2),
+                          title: 
+                          Text(snapshot.data.map[category][position].quote,
+                          style: textStyle2),
                           subtitle: Text(
                             snapshot.data.map[category][position].author + " -",
                             style: textStyle,
@@ -55,6 +100,9 @@ class QuotePageState extends State<QuotesPage> {
                             color: Colors.pink.shade900,
                           ),
                           onTap: () {
+                            _interstitialAd = createInterstitialAd()
+                              ..load()
+                              ..show();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

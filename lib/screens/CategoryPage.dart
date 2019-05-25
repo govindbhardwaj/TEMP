@@ -1,6 +1,7 @@
 import 'package:daily_quotes/screens/QuotesPage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 
 import 'package:daily_quotes/screens/CardPage.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -25,6 +26,25 @@ class CategoryPageState extends State<CategoryPage> {
 
   final notifications = FlutterLocalNotificationsPlugin();
 
+  static final MobileAdTargetingInfo targetInfo = new MobileAdTargetingInfo(
+    testDevices: <String>[],
+    keywords: <String>['quotes', 'inspiration', 'motivation', 'category'],
+    birthday: new DateTime.now(),
+    childDirected: true,
+  );
+
+  BannerAd _bannerAd;
+
+  BannerAd createBannerAd() {
+    return new BannerAd(
+        adUnitId: "ca-app-pub-1790548623336527/7780948871",
+        size: AdSize.smartBanner,
+        targetingInfo: targetInfo,
+        listener: (MobileAdEvent event) {
+          print("Banner event : $event");
+        });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -37,6 +57,17 @@ class CategoryPageState extends State<CategoryPage> {
     notifications.initialize(
         InitializationSettings(settingsAndroid, settingsIOS),
         onSelectNotification: onSelectNotification);
+    FirebaseAdMob.instance
+        .initialize(appId: "ca-app-pub-1790548623336527~7884681226");
+    _bannerAd = createBannerAd()
+      ..load()
+      ..show();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
   }
 
   Future onSelectNotification(String payload) async {

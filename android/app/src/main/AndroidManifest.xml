@@ -10,6 +10,9 @@
         android:name=".Application"
         android:label="Daily Quotes"
         android:icon="@mipmap/laucher_icon">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1790548623336527~7884681226"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
