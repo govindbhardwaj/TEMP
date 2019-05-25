@@ -1,7 +1,9 @@
+import 'package:daily_quotes/bloc/text_bloc.dart';
 import 'package:daily_quotes/dto/QuotesDTO.dart';
 import 'package:daily_quotes/screens/CardPage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:provider/provider.dart';
 
 class QuotesPage extends StatefulWidget {
   String category;
@@ -66,9 +68,11 @@ class QuotePageState extends State<QuotesPage> {
 
   @override
   Widget build(BuildContext context) {
+    final TextBloc textBloc = Provider.of<TextBloc>(context);
+
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text(category),
+          title: new Text(category, style: TextStyle(fontFamily: "Quicksand"),),
         ),
         body: new FutureBuilder<QuotesDTO>(
           future: loadQuotes(),
@@ -78,18 +82,17 @@ class QuotePageState extends State<QuotesPage> {
                   padding: new EdgeInsets.all(10.0),
                   child: new ListView.builder(
                     itemBuilder: (context, position) {
-                      const textStyle = const TextStyle(color: Colors.pink, fontSize: 12);
-                      const textStyle2 = const TextStyle(fontSize: 14, fontFamily: "Rock Salt");
+                      const textStyle =
+                          const TextStyle(color: Colors.pink, fontSize: 12);
+                      const textStyle2 = const TextStyle(fontSize: 14, fontFamily: "Quicksand");
 
                       return Card(
                         margin: new EdgeInsets.fromLTRB(10, 10, 10, 10),
-                        
                         elevation: 5,
-
                         child: ListTile(
-                          title: 
-                          Text(snapshot.data.map[category][position].quote,
-                          style: textStyle2),
+                          title: Text(
+                              snapshot.data.map[category][position].quote,
+                              style: textStyle2),
                           subtitle: Text(
                             snapshot.data.map[category][position].author + " -",
                             style: textStyle,
@@ -103,6 +106,8 @@ class QuotePageState extends State<QuotesPage> {
                             _interstitialAd = createInterstitialAd()
                               ..load()
                               ..show();
+                            textBloc.setStatusText(
+                                snapshot.data.map[category][position].quote);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

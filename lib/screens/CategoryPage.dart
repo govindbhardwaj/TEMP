@@ -82,7 +82,7 @@ class CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('Daily Quote'),
+          title: new Text('Daily Quote', style: TextStyle(fontFamily: "Quicksand")),
 
         ),
         body: new Container(
@@ -98,7 +98,7 @@ class CategoryPageState extends State<CategoryPage> {
                       Icons.bookmark,
                       color: Colors.pink.shade900,
                     ),
-                    title: Text(quotesCategory[position]),
+                    title: Text(quotesCategory[position], style: TextStyle(fontFamily: "Quicksand"),),
                     trailing: new Icon(
                       Icons.format_quote,
                       color: Colors.pink.shade900,

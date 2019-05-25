@@ -24,6 +24,7 @@ dependencies:
   path_provider: ^0.5.0+1
   android_alarm_manager: ^0.4.1+6
   firebase_admob: ^0.9.0
+  provider: ^2.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -73,15 +74,152 @@ flutter:
   fonts:
     - family: Stylish
       fonts:
-         - asset: assets/Stylish-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
-
+        - asset: assets/Stylish-Regular.ttf
+    - family: Tangerine
+      fonts:
+        - asset: assets/Tangerine-Regular.ttf
+        - asset: assets/Tangerine-Bold.ttf
+    - family: JosefinSlab
+      fonts:
+        - asset: assets/JosefinSlab-Regular.ttf
+        - asset: assets/JosefinSlab-LightItalic.ttf
+        - asset: assets/JosefinSlab-Light.ttf
+        - asset: assets/JosefinSlab-Italic.ttf
+        - asset: assets/JosefinSlab-BoldItalic.ttf
+        - asset: assets/JosefinSlab-Bold.ttf
+    - family: Ubuntu
+      fonts:
+        - asset: assets/Ubuntu-Regular.ttf
+        - asset: assets/Ubuntu-MediumItalic.ttf
+        - asset: assets/Ubuntu-Medium.ttf
+        - asset: assets/Ubuntu-LightItalic.ttf
+        - asset: assets/Ubuntu-Light.ttf
+        - asset: assets/Ubuntu-Italic.ttf
+        - asset: assets/Ubuntu-BoldItalic.ttf
+        - asset: assets/Ubuntu-Bold.ttf
+    - family: OpenSans
+      fonts:
+        - asset: assets/OpenSans-SemiBoldItalic.ttf
+        - asset: assets/OpenSans-SemiBold.ttf
+        - asset: assets/OpenSans-Regular.ttf
+        - asset: assets/OpenSans-LightItalic.ttf
+        - asset: assets/OpenSans-Light.ttf
+        - asset: assets/OpenSans-Italic.ttf
+        - asset: assets/OpenSans-ExtraBoldItalic.ttf
+        - asset: assets/OpenSans-ExtraBold.ttf
+        - asset: assets/OpenSans-BoldItalic.ttf
+        - asset: assets/OpenSans-Bold.ttf
+    - family: Pacifico
+      fonts:
+        - asset: assets/Pacifico-Regular.ttf
+    - family: Damion
+      fonts:
+        - asset: assets/Damion-Regular.ttf
+    - family: Prata
+      fonts:
+        - asset: assets/Prata-Regular.ttf
+    - family: AmaticSC
+      fonts:
+        - asset: assets/AmaticSC-Regular.ttf
+        - asset: assets/AmaticSC-Bold.ttf
+    - family: Quicksand
+      fonts:
+        - asset: assets/Quicksand-Regular.ttf
+        - asset: assets/Quicksand-Medium.ttf
+        - asset: assets/Quicksand-Light.ttf
+        - asset: assets/Quicksand-Bold.ttf
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/PlayfairDisplay-Regular.ttf
+        - asset: assets/PlayfairDisplay-Italic.ttf
+        - asset: assets/PlayfairDisplay-BoldItalic.ttf
+        - asset: assets/PlayfairDisplay-Bold.ttf
+        - asset: assets/PlayfairDisplay-BlackItalic.ttf
+        - asset: assets/PlayfairDisplay-Black.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/Montserrat-ThinItalic.ttf
+        - asset: assets/Montserrat-Thin.ttf
+        - asset: assets/Montserrat-SemiBoldItalic.ttf
+        - asset: assets/Montserrat-SemiBold.ttf
+        - asset: assets/Montserrat-Regular.ttf
+        - asset: assets/Montserrat-MediumItalic.ttf
+        - asset: assets/Montserrat-Medium.ttf
+        - asset: assets/Montserrat-LightItalic.ttf
+        - asset: assets/Montserrat-Light.ttf
+        - asset: assets/Montserrat-Italic.ttf
+        - asset: assets/Montserrat-ExtraLightItalic.ttf
+        - asset: assets/Montserrat-ExtraLight.ttf
+        - asset: assets/Montserrat-ExtraBoldItalic.ttf
+        - asset: assets/Montserrat-ExtraBold.ttf
+        - asset: assets/Montserrat-BoldItalic.ttf
+        - asset: assets/Montserrat-Bold.ttf
+        - asset: assets/Montserrat-BlackItalic.ttf
+        - asset: assets/Montserrat-Black.ttf
+    - family: GreatVibes
+      fonts:
+        - asset: assets/GreatVibes-Regular.ttf
+    - family: Lobster
+      fonts:
+        - asset: assets/Lobster-Regular.ttf
+    - family: Nunito
+      fonts:
+        - asset: assets/Nunito-SemiBoldItalic.ttf
+        - asset: assets/Nunito-SemiBold.ttf
+        - asset: assets/Nunito-Regular.ttf
+        - asset: assets/Nunito-LightItalic.ttf
+        - asset: assets/Nunito-Light.ttf
+        - asset: assets/Nunito-Italic.ttf
+        - asset: assets/Nunito-ExtraLightItalic.ttf
+        - asset: assets/Nunito-ExtraLight.ttf
+        - asset: assets/Nunito-ExtraBoldItalic.ttf
+        - asset: assets/Nunito-ExtraBold.ttf
+        - asset: assets/Nunito-BoldItalic.ttf
+        - asset: assets/Nunito-Bold.ttf
+        - asset: assets/Nunito-BlackItalic.ttf
+        - asset: assets/Nunito-Black.ttf
+    - family: MontserratAlternates
+      fonts:
+        - asset: assets/MontserratAlternates-ThinItalic.ttf
+        - asset: assets/MontserratAlternates-Thin.ttf
+        - asset: assets/MontserratAlternates-SemiBoldItalic.ttf
+        - asset: assets/MontserratAlternates-SemiBold.ttf
+        - asset: assets/MontserratAlternates-Regular.ttf
+        - asset: assets/MontserratAlternates-MediumItalic.ttf
+        - asset: assets/MontserratAlternates-Medium.ttf
+        - asset: assets/MontserratAlternates-LightItalic.ttf
+        - asset: assets/MontserratAlternates-Light.ttf
+        - asset: assets/MontserratAlternates-Italic.ttf
+        - asset: assets/MontserratAlternates-ExtraLightItalic.ttf
+        - asset: assets/MontserratAlternates-ExtraLight.ttf
+        - asset: assets/MontserratAlternates-ExtraBoldItalic.ttf
+        - asset: assets/MontserratAlternates-ExtraBold.ttf
+        - asset: assets/MontserratAlternates-BoldItalic.ttf
+        - asset: assets/MontserratAlternates-Bold.ttf
+        - asset: assets/MontserratAlternates-BlackItalic.ttf
+        - asset: assets/MontserratAlternates-Black.ttf
+    - family: JuliusSansOne
+      fonts:
+        - asset: assets/JuliusSansOne-Regular.ttf
+    - family: Cinzel
+      fonts:
+        - asset: assets/Cinzel-Regular.ttf
+        - asset: assets/Cinzel-Bold.ttf
+        - asset: assets/Cinzel-Black.ttf
+    - family: PlayfairDisplaySC
+      fonts:
+        - asset: assets/PlayfairDisplaySC-Regular.ttf
+        - asset: assets/PlayfairDisplaySC-Italic.ttf
+        - asset: assets/PlayfairDisplaySC-BoldItalic.ttf
+        - asset: assets/PlayfairDisplaySC-Bold.ttf
+        - asset: assets/PlayfairDisplaySC-BlackItalic.ttf
+        - asset: assets/PlayfairDisplaySC-Black.ttf
+    - family: RobotoSlab
+      fonts:
+        - asset: assets/RobotoSlab-Thin.ttf
+        - asset: assets/RobotoSlab-Regular.ttf
+        - asset: assets/RobotoSlab-Light.ttf
+        - asset: assets/RobotoSlab-Bold.ttf
+    - family: Mandali
+      fonts:
+        - asset: assets/Mandali-Regular.ttf
