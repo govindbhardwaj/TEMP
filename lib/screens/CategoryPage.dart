@@ -1,3 +1,4 @@
+import 'package:daily_quotes/bloc/text_bloc.dart';
 import 'package:daily_quotes/screens/QuotesPage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:firebase_admob/firebase_admob.dart';
 
 import 'package:daily_quotes/screens/CardPage.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:provider/provider.dart';
 
 class CategoryPage extends StatefulWidget {
   CategoryPage({Key key}) : super(key: key);
@@ -33,17 +35,17 @@ class CategoryPageState extends State<CategoryPage> {
     childDirected: true,
   );
 
-  BannerAd _bannerAd;
-
-  BannerAd createBannerAd() {
-    return new BannerAd(
-        adUnitId: "ca-app-pub-1790548623336527/7780948871",
-        size: AdSize.smartBanner,
-        targetingInfo: targetInfo,
-        listener: (MobileAdEvent event) {
-          print("Banner event : $event");
-        });
-  }
+//  BannerAd _bannerAd;
+//
+//  BannerAd createBannerAd() {
+//    return new BannerAd(
+//        adUnitId: "ca-app-pub-1790548623336527/7780948871",
+//        size: AdSize.smartBanner,
+//        targetingInfo: targetInfo,
+//        listener: (MobileAdEvent event) {
+//          print("Banner event : $event");
+//        });
+//  }
 
   @override
   void initState() {
@@ -59,22 +61,25 @@ class CategoryPageState extends State<CategoryPage> {
         onSelectNotification: onSelectNotification);
     FirebaseAdMob.instance
         .initialize(appId: "ca-app-pub-1790548623336527~7884681226");
-    _bannerAd = createBannerAd()
-      ..load()
-      ..show();
+//    _bannerAd = createBannerAd()
+//      ..load()
+//      ..show();
   }
-
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    super.dispose();
-  }
+//
+//  @override
+//  void dispose() {
+//    _bannerAd.dispose();
+//    super.dispose();
+//  }
 
   Future onSelectNotification(String payload) async {
     print("Payload from Category: " + payload);
+    final TextBloc textBloc = Provider.of<TextBloc>(context);
+    textBloc.setStatusText(payload);
+
     await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => CardPage(payload)),
+      MaterialPageRoute(builder: (context) => CardPage()),
     );
   }
 
@@ -83,10 +88,8 @@ class CategoryPageState extends State<CategoryPage> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Daily Quote', style: TextStyle(fontFamily: "Quicksand")),
-
         ),
         body: new Container(
-
             padding: new EdgeInsets.all(20.0),
             child: new ListView.builder(
               itemBuilder: (context, position) {

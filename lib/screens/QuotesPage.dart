@@ -29,18 +29,18 @@ class QuotePageState extends State<QuotesPage> {
     childDirected: true,
   );
 
-  BannerAd _bannerAd;
-  InterstitialAd _interstitialAd;
-
-  BannerAd createBannerAd() {
-    return new BannerAd(
-        adUnitId: "ca-app-pub-1790548623336527/3137505597",
-        size: AdSize.smartBanner,
-        targetingInfo: targetInfo,
-        listener: (MobileAdEvent event) {
-          print("Banner event : $event");
-        });
-  }
+//  BannerAd _bannerAd;
+ InterstitialAd _interstitialAd;
+//
+//  BannerAd createBannerAd() {
+//    return new BannerAd(
+//        adUnitId: "ca-app-pub-1790548623336527/3137505597",
+//        size: AdSize.smartBanner,
+//        targetingInfo: targetInfo,
+//        listener: (MobileAdEvent event) {
+//          print("Banner event : $event");
+//        });
+//  }
 
   InterstitialAd createInterstitialAd() {
     return new InterstitialAd(
@@ -51,20 +51,20 @@ class QuotePageState extends State<QuotesPage> {
         });
   }
 
-  @override
-  void initState() {
-    super.initState();
-    _bannerAd = createBannerAd()
-      ..load()
-      ..show();
-  }
-
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    _interstitialAd.dispose();
-    super.dispose();
-  }
+//  @override
+//  void initState() {
+//    super.initState();
+//    _bannerAd = createBannerAd()
+//      ..load()
+//      ..show();
+//  }
+//
+//  @override
+//  void dispose() {
+//    _bannerAd.dispose();
+//    _interstitialAd.dispose();
+//    super.dispose();
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,8 +111,7 @@ class QuotePageState extends State<QuotesPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CardPage(snapshot
-                                        .data.map[category][position].quote)));
+                                    builder: (context) => CardPage()));
                           },
                         ),
                       );

@@ -51,8 +51,8 @@ void main() async {
   runApp(MyApp());
 
   var initialTime = getNextAlarmTime();
-  //await AndroidAlarmManager.periodic(Duration(hours: initialTime.hours, minutes: initialTime.minutes, seconds: initialTime.seconds), initialAlarmId, initialPushNotificationOnDevice);
-  await AndroidAlarmManager.periodic(Duration(hours: 0, minutes: 1, seconds: initialTime.seconds), initialAlarmId, initialPushNotificationOnDevice);
+  await AndroidAlarmManager.periodic(Duration(hours: initialTime.hours, minutes: initialTime.minutes, seconds: initialTime.seconds), initialAlarmId, initialPushNotificationOnDevice);
+  //await AndroidAlarmManager.periodic(Duration(hours: 0, minutes: 1, seconds: initialTime.seconds), initialAlarmId, initialPushNotificationOnDevice);
 }
 
 Time getNextAlarmTime() {
@@ -89,7 +89,7 @@ Time getNextAlarmTime() {
     z = expectedSecond - second;
   }
 
-  print("$x $y $z");
+  print("Hours: $x Minutes: $y Seconds: $z");
   return new Time(x, y, z);
 }
 
@@ -104,7 +104,7 @@ class MyApp extends StatelessWidget {
         ],
         child: new MaterialApp(
           theme: ThemeData(
-              primarySwatch: Colors.deepPurple
+              primarySwatch: Colors.pink
           ),
           title: 'Dily Quote',
           home: new CategoryPage(),

@@ -16,22 +16,14 @@ import 'package:daily_quotes/bloc/text_bloc.dart';
 import 'package:provider/provider.dart';
 
 class CardPage extends StatefulWidget {
-  String quote;
-  CardPage(String quote) {
-    this.quote = quote;
-  }
 
   @override
-  CardPageState createState() => CardPageState(quote);
+  CardPageState createState() => CardPageState();
 }
 
 class CardPageState extends State<CardPage> {
-  String quote;
-  GlobalKey _globalKey = new GlobalKey();
 
-  CardPageState(String quote){
-    this.quote = quote;
-  }
+  GlobalKey _globalKey = new GlobalKey();
 
   Future<void> _captureQuotePicAndShare() async {
     return new Future.delayed(const Duration(milliseconds: 0), () async {
@@ -46,14 +38,13 @@ class CardPageState extends State<CardPage> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
 
     final ThemeBloc themeBloc = Provider.of<ThemeBloc>(context);
     final TextBloc textBloc = Provider.of<TextBloc>(context);
     final FontBloc fontBloc = Provider.of<FontBloc>(context);
-
-    textBloc.setStatusText(quote == null ? textBloc.statusText : quote);
 
     return new Scaffold(
       body: new RepaintBoundary(
