@@ -1,19 +1,26 @@
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
-import 'package:daily_quotes/EditableTextPoc.dart';
-import 'package:daily_quotes/bloc/color_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:esys_flutter_share/esys_flutter_share.dart';
 import 'package:daily_quotes/bloc/font_bloc.dart';
 import 'package:daily_quotes/bloc/text_bloc.dart';
+import 'package:daily_quotes/bloc/color_bloc.dart';
+import 'package:daily_quotes/screens/EditQuote.dart';
+
+
+//APPID: ca-app-pub-7289797869104916~5923321156
+//Next steps
+//Make a note of your new app ID. You'll need to add it to your app's source code to run AdMob.
+//Create an ad unit to display ads in your app.
+//If your app is published to Google Play or the App Store, remember to come back to link your app.
 
 
 import 'package:provider/provider.dart';
+import 'package:esys_flutter_share/esys_flutter_share.dart';
 
 class CardPage extends StatefulWidget {
 
@@ -145,7 +152,7 @@ class CardPageState extends State<CardPage> {
     Navigator.push(
         context,
         MaterialPageRoute<DismissDialogAction>(
-          builder: (BuildContext context) => FullScreenDialogDemo(),
+          builder: (BuildContext context) => EditQuote(),
           fullscreenDialog: true,
         ));
   }

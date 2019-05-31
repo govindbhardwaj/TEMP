@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:meta/meta.dart';
-import 'package:daily_quotes/helpers/utils.dart';
+import 'package:daily_quotes/helpers/Utils.dart';
 
 import 'dart:async';
 import 'dart:ui';

@@ -30,7 +30,7 @@ class QuotePageState extends State<QuotesPage> {
   );
 
 //  BannerAd _bannerAd;
- InterstitialAd _interstitialAd;
+InterstitialAd _interstitialAd;
 //
 //  BannerAd createBannerAd() {
 //    return new BannerAd(
@@ -44,7 +44,7 @@ class QuotePageState extends State<QuotesPage> {
 
   InterstitialAd createInterstitialAd() {
     return new InterstitialAd(
-        adUnitId: "ca-app-pub-1790548623336527/9387843898",
+        adUnitId: "ca-app-pub-7289797869104916/9740999434",
         targetingInfo: targetInfo,
         listener: (MobileAdEvent event) {
           print("Interstitial event : $event");
@@ -58,7 +58,7 @@ class QuotePageState extends State<QuotesPage> {
 //      ..load()
 //      ..show();
 //  }
-//
+//T
 //  @override
 //  void dispose() {
 //    _bannerAd.dispose();
